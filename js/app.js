@@ -943,7 +943,7 @@ routes.tentang = () => shell('profil', `
     <div class="card center"><div class="ic-box lg ic-navy" style="margin:0 auto 10px">${ic('store', 26)}</div><div class="brand" style="color:var(--navy);margin:0;font-size:30px">Ca<span>Koel</span></div><div class="small bold">Catatan Bakoel — Hitung Stok, Untung Jadi!</div>
       <p class="small muted">Solusi aplikasi digital dalam pengelolaan persediaan barang pada usaha warung kelontong. CaKoel memperkirakan penjualan dan laba dari <b>barang masuk</b> + <b>stok akhir shift</b> pada 10–20 barang prioritas, memberi rekomendasi restock, dan membagikan laporan melalui WhatsApp.</p></div>
     <div class="section-title"><h3>Tim Pengembang — Kelompok 3</h3></div>
-    <div class="list">${[['Hisya Auliani Indra', '5031251112'], ['Vania Maharani Putri', '5031251115'], ['Mahdi Farras Madani', '5031251136'], ['Anak Agung Gde Arista M', '5031251046'], ['Natalia Erika', '5031251147']].map(m => `<div class="item"><div class="initials">${initials(m[0])}</div><div class="grow"><div class="name">${m[0]}</div><div class="meta">${m[1]}</div></div></div>`).join('')}</div>
+    <div class="list">${['Hisya Auliani Indra', 'Vania Maharani Putri', 'Mahdi Farras Madani', 'Anak Agung Gde Arista M', 'Natalia Erika'].map(n => `<div class="item"><div class="initials">${initials(n)}</div><div class="grow"><div class="name">${n}</div></div></div>`).join('')}</div>
     <p class="small muted center mt">Sistem Informasi Bisnis (C)<br>Dosen Pengampu: Theodosia Yunita Durman, S.M., M.MT.</p>
   </div></div>`);
 
