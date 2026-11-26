@@ -70,13 +70,11 @@ const authShell = rightHtml => `
         <div class="logo-bubble">🏪</div>
         <div class="brand">Ca<span>Koel</span></div>
         <div class="tag">Hitung Stok, Untung Jadi!</div>
-        <p>Pencatatan stok &amp; keuangan warung kelontong yang sederhana. Cukup catat <b>barang masuk</b> dan <b>stok akhir shift</b> — perkiraan penjualan, laba, dan jadwal kulakan dihitung otomatis.</p>
+        <p>Aplikasi pencatatan stok &amp; untung warung kelontong yang simpel dan cepat.</p>
         <ul class="auth-features">
-          <li>📦 Fokus pada 10–20 barang prioritas warung</li>
-          <li>🧮 Estimasi penjualan &amp; laba kotor otomatis per shift</li>
-          <li>🛒 Rekomendasi belanja (restock) saat stok menipis</li>
-          <li>📒 Catatan kasbon pelanggan &amp; pengingat WhatsApp</li>
-          <li>💬 Kirim ringkasan &amp; laporan keuangan langsung via WhatsApp</li>
+          <li>📦 Pantau 10–20 barang utama</li>
+          <li>🧮 Hitung untung otomatis</li>
+          <li>💬 Laporan langsung ke WhatsApp</li>
         </ul>
         <div class="auth-foot">Sistem Informasi Bisnis (C) · Kelompok 3</div>
       </div>
@@ -107,17 +105,15 @@ const routes = {};
 
 /* ---------- Splash ---------- */
 routes.splash = () => authShell(`
-  <div class="eyebrow">Selamat Datang</div>
-  <h1 style="margin:6px 0 8px;font-size:26px">Kelola warung lebih rapi tanpa ribet</h1>
-  <p class="small muted" style="margin:0">Tanpa perlu mencatat setiap transaksi kasir. Cukup ikuti 3 langkah sederhana:</p>
-  <div class="step-list">
-    <div class="step-item"><div class="step-num">1</div><div><b class="small">Catat Barang Masuk</b><div class="tiny muted">Isi jumlah barang saat baru kulakan dari agen.</div></div></div>
-    <div class="step-item"><div class="step-num">2</div><div><b class="small">Hitung Stok Akhir Shift</b><div class="tiny muted">Hitung sisa fisik barang saat tutup warung atau ganti jaga.</div></div></div>
-    <div class="step-item"><div class="step-num">3</div><div><b class="small">Lihat Untung &amp; Daftar Belanja</b><div class="tiny muted">Omzet, laba kotor, dan rekomendasi kulakan terhitung otomatis.</div></div></div>
-  </div>
-  <div class="stack">
-    <button class="btn btn-primary" data-act="go" data-to="login">Mulai Sekarang →</button>
-    <button class="btn btn-ghost" data-act="demo">🧪 Coba dengan Data Contoh (14 Hari)</button>
+  <div class="center" style="padding:8px 0">
+    <div style="font-size:52px;line-height:1;margin-bottom:12px">🏪</div>
+    <div class="eyebrow">Selamat Datang</div>
+    <h1 style="margin:6px 0 8px;font-size:24px">Catat Stok Warung Jadi Lebih Mudah</h1>
+    <p class="small muted" style="margin:0 0 24px">Cukup catat barang masuk &amp; sisa stok — untung harian langsung ketahuan.</p>
+    <div class="stack">
+      <button class="btn btn-primary" data-act="go" data-to="login">Mulai Sekarang →</button>
+      <button class="btn btn-ghost" data-act="demo">🧪 Coba Data Contoh</button>
+    </div>
   </div>`);
 
 /* ---------- Login / daftar ---------- */
