@@ -7,7 +7,8 @@ const FREE_LIMIT = 10;      // paket gratis: 10 barang prioritas
 const PREMIUM_LIMIT = 20;   // paket premium: 20 barang prioritas
 const PREMIUM_PRICE = 35000;
 const KATEGORI = ['Sembako', 'Makanan', 'Minuman', 'Kebutuhan Rumah', 'Lainnya'];
-const EMOJIS = ['🌾', '🛢️', '🍬', '🍜', '🧃', '🥚', '☕', '🥛', '🧼', '🍪', '🧂', '🍞', '🥤', '💧', '🚬', '🧻', '🪥', '🔋', '🕯️', '🍫', '🥫', '🧴', '🐟', '📦'];
+const PRODUCT_ICONS = ['grain', 'droplet', 'cube', 'bowl', 'bottle', 'egg', 'cup', 'can', 'soap', 'cookie', 'bag', 'box'];
+const EMOJIS = PRODUCT_ICONS;
 
 function defaultState() {
   return {
@@ -171,16 +172,16 @@ const totalKasbon = () => S.pelanggan.reduce((a, c) => a + Math.max(0, saldoPela
 /* ---------- Data contoh (demo) ---------- */
 const SEED = [
   // nama, kategori, satuan, icon, hargaBeli, hargaJual, minStok, leadTime, stok, rata2 terjual/hari
-  ['Beras Ramos', 'Sembako', 'karung', '🌾', 65000, 72000, 3, 2, 8, 2],
-  ['Minyak Goreng', 'Sembako', 'liter', '🛢️', 16500, 19000, 6, 2, 15, 3],
-  ['Gula Pasir', 'Sembako', 'kg', '🍬', 15500, 18000, 5, 2, 12, 4],
-  ['Mi Instan', 'Makanan', 'bungkus', '🍜', 2900, 3500, 24, 3, 60, 15],
-  ['Teh Botol', 'Minuman', 'botol', '🧃', 4000, 5000, 12, 3, 30, 6],
-  ['Telur Ayam', 'Sembako', 'kg', '🥚', 28000, 31000, 4, 2, 10, 2],
-  ['Kopi Sachet', 'Minuman', 'sachet', '☕', 1900, 2500, 20, 3, 50, 12],
-  ['Susu Kental', 'Minuman', 'kaleng', '🥛', 10500, 12500, 4, 4, 12, 2],
-  ['Sabun Mandi', 'Kebutuhan Rumah', 'batang', '🧼', 3200, 4000, 6, 5, 15, 2],
-  ['Biskuit Kelapa', 'Makanan', 'bungkus', '🍪', 7500, 9000, 5, 4, 10, 2],
+  ['Beras Ramos', 'Sembako', 'karung', 'grain', 65000, 72000, 3, 2, 8, 2],
+  ['Minyak Goreng', 'Sembako', 'liter', 'droplet', 16500, 19000, 6, 2, 15, 3],
+  ['Gula Pasir', 'Sembako', 'kg', 'cube', 15500, 18000, 5, 2, 12, 4],
+  ['Mi Instan', 'Makanan', 'bungkus', 'bowl', 2900, 3500, 24, 3, 60, 15],
+  ['Teh Botol', 'Minuman', 'botol', 'bottle', 4000, 5000, 12, 3, 30, 6],
+  ['Telur Ayam', 'Sembako', 'kg', 'egg', 28000, 31000, 4, 2, 10, 2],
+  ['Kopi Sachet', 'Minuman', 'sachet', 'cup', 1900, 2500, 20, 3, 50, 12],
+  ['Susu Kental', 'Minuman', 'kaleng', 'can', 10500, 12500, 4, 4, 12, 2],
+  ['Sabun Mandi', 'Kebutuhan Rumah', 'batang', 'soap', 3200, 4000, 6, 5, 15, 2],
+  ['Biskuit Kelapa', 'Makanan', 'bungkus', 'cookie', 7500, 9000, 5, 4, 10, 2],
 ];
 
 function loadDemo(keepToko = true) {
