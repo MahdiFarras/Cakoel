@@ -69,7 +69,13 @@ a { color: inherit; }
   min-height: 100vh; width: 100%;
   display: grid; grid-template-columns: 1fr;
   background: linear-gradient(135deg, rgba(58, 0, 12, 0.72) 0%, rgba(85, 11, 24, 0.48) 50%, rgba(58, 0, 12, 0.76) 100%),
-    url('../img/welcome-bg.jpg') center center / cover no-repeat;
+    url('../img/welcome-bg-landscape.jpg') center center / cover no-repeat;
+}
+@media (orientation: portrait) {
+  .auth-shell {
+    background: linear-gradient(135deg, rgba(58, 0, 12, 0.72) 0%, rgba(85, 11, 24, 0.48) 50%, rgba(58, 0, 12, 0.76) 100%),
+      url('../img/welcome-bg-portrait.jpg') center center / cover no-repeat;
+  }
 }
 .auth-brand {
   background: transparent;
