@@ -772,7 +772,7 @@ routes.laporan = () => {
           <div class="card">
             <div class="row between"><b class="small">Omzet &amp; laba harian</b><span class="tiny muted">${days} hari tercatat</span></div>
             <div class="chart-wrap mt"><canvas id="chart"></canvas></div>
-            <div class="legend"><span><i style="background:var(--sapphire)"></i>Omzet</span><span><i style="background:var(--gold)"></i>Laba</span></div>
+            <div class="legend"><span><i style="background:#75162E"></i>Omzet</span><span><i style="background:#3A000C"></i>Laba</span></div>
           </div>
           <div class="card">
             <div class="row between" style="margin-bottom:8px"><h3 style="margin:0;font-size:15.5px">Barang terlaris</h3><span class="tiny muted">${num(r.terjual)} unit terjual</span></div>
@@ -813,7 +813,7 @@ function drawChart() {
   cv.width = W * dpr; cv.height = H * dpr; const g = cv.getContext('2d'); g.scale(dpr, dpr);
   const padL = 44, padB = 22, padT = 10; const cw = W - padL - 6, ch = H - padB - padT;
   const max = Math.max(1, ...data.map(x => x.om)) * 1.1;
-  g.font = '10px "Plus Jakarta Sans", sans-serif'; g.fillStyle = '#64748B'; g.strokeStyle = '#DCE1E7'; g.lineWidth = 1;
+  g.font = '10px "Onest", sans-serif'; g.fillStyle = '#7A5159'; g.strokeStyle = '#DFCFA8'; g.lineWidth = 1;
   for (let i = 0; i <= 3; i++) {
     const y = padT + ch - ch * i / 3; g.beginPath(); g.moveTo(padL, y); g.lineTo(W, y); g.stroke();
     const v = max * i / 3; g.textAlign = 'right'; g.fillText(v >= 1e6 ? (v / 1e6).toFixed(1) + 'jt' : Math.round(v / 1000) + 'rb', padL - 6, y + 3);
@@ -822,9 +822,9 @@ function drawChart() {
   data.forEach((x, i) => {
     const x0 = padL + i * bw; const w = Math.max(3, Math.min(28, bw * 0.65));
     const h1 = ch * x.om / max, h2 = ch * x.lb / max;
-    g.fillStyle = '#1E3A8A'; roundRect(g, x0 + (bw - w) / 2, padT + ch - h1, w, h1, Math.min(5, w / 2));
-    g.fillStyle = '#D4AF37'; roundRect(g, x0 + (bw - w) / 2, padT + ch - h2, w, h2, Math.min(5, w / 2));
-    if (i % step === 0 || i === n - 1) { g.fillStyle = '#64748B'; g.textAlign = 'center'; g.fillText(new Date(x.d).getDate(), x0 + bw / 2, H - 5); }
+    g.fillStyle = '#75162E'; roundRect(g, x0 + (bw - w) / 2, padT + ch - h1, w, h1, Math.min(5, w / 2));
+    g.fillStyle = '#3A000C'; roundRect(g, x0 + (bw - w) / 2, padT + ch - h2, w, h2, Math.min(5, w / 2));
+    if (i % step === 0 || i === n - 1) { g.fillStyle = '#7A5159'; g.textAlign = 'center'; g.fillText(new Date(x.d).getDate(), x0 + bw / 2, H - 5); }
   });
 }
 function roundRect(g, x, y, w, h, r) { if (h <= 0) return; r = Math.min(r, h); g.beginPath(); g.moveTo(x, y + h); g.lineTo(x, y + r); g.quadraticCurveTo(x, y, x + r, y); g.lineTo(x + w - r, y); g.quadraticCurveTo(x + w, y, x + w, y + r); g.lineTo(x + w, y + h); g.closePath(); g.fill(); }
