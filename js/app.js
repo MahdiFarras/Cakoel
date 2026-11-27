@@ -102,8 +102,8 @@ function sidebar(active) {
   ];
   return `<aside class="sidebar">
     <div class="sb-brand">
-      <div class="sb-logo">${ic('store', 21)}</div>
-      <div><div class="sb-title">Ca<span>Koel</span></div><div class="sb-sub">Hitung Stok, Untung Jadi!</div></div>
+      <img src="img/logo-cakoel.png" alt="CaKoel" class="sb-logo-img" />
+      <div class="sb-sub">Hitung Stok, Untung Jadi!</div>
     </div>
     <button class="sb-store" data-act="go" data-to="toko">
       <div class="grow"><div class="bold small ellipsis">${esc(t.nama)}</div><div class="tiny muted ellipsis">${esc(t.alamat || 'Alamat belum diisi')}</div></div>
@@ -131,8 +131,7 @@ const authShell = rightHtml => `
   <div class="auth-shell">
     <section class="auth-brand">
       <div class="auth-brand-inner">
-        <div class="logo-bubble">${ic('store', 36)}</div>
-        <div class="brand">Ca<span>Koel</span></div>
+        <img src="img/logo-cakoel.png" alt="CaKoel" class="auth-logo-img" />
         <div class="tag">Hitung Stok, Untung Jadi!</div>
         <p>Aplikasi pencatatan stok &amp; untung warung kelontong yang simpel dan cepat.</p>
         <ul class="auth-features">
@@ -940,7 +939,7 @@ routes.bantuan = () => shell('profil', `
 routes.tentang = () => shell('profil', `
   ${topbar('Tentang CaKoel', 'Versi 1.0', 'profil')}
   <div class="page-body"><div class="narrow">
-    <div class="card center"><div class="ic-box lg ic-navy" style="margin:0 auto 10px">${ic('store', 26)}</div><div class="brand" style="color:var(--navy);margin:0;font-size:30px">Ca<span>Koel</span></div><div class="small bold">Catatan Bakoel — Hitung Stok, Untung Jadi!</div>
+    <div class="card center"><img src="img/logo-cakoel.png" alt="CaKoel" class="about-logo-img" /><div class="small bold">Catatan Bakoel — Hitung Stok, Untung Jadi!</div>
       <p class="small muted">Solusi aplikasi digital dalam pengelolaan persediaan barang pada usaha warung kelontong. CaKoel memperkirakan penjualan dan laba dari <b>barang masuk</b> + <b>stok akhir shift</b> pada 10–20 barang prioritas, memberi rekomendasi restock, dan membagikan laporan melalui WhatsApp.</p></div>
     <div class="section-title"><h3>Tim Pengembang — Kelompok 3</h3></div>
     <div class="list">${['Hisya Auliani Indra', 'Vania Maharani Putri', 'Mahdi Farras Madani', 'Anak Agung Gde Arista M', 'Natalia Erika'].map(n => `<div class="item"><div class="initials">${initials(n)}</div><div class="grow"><div class="name">${n}</div></div></div>`).join('')}</div>

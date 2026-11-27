@@ -119,6 +119,7 @@ a { color: inherit; }
   .auth-shell { grid-template-columns: 1.02fr 1fr; }
   .auth-brand { padding: 48px 56px; }
   .brand { font-size: 46px; }
+  .auth-logo-img { height: 108px; max-width: 330px; }
   .auth-panel { padding: 40px 48px; }
   .auth-card { padding: 36px 34px; }
 }
@@ -141,7 +142,13 @@ a { color: inherit; }
   .mobile-only { display: none !important; }
 }
 
-.sb-brand { display: flex; align-items: center; gap: 12px; padding: 4px 6px; }
+.sb-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 4px 6px; }
+.sb-logo-img { height: 48px; width: auto; max-width: 185px; object-fit: contain; display: block; }
+.auth-logo-img {
+  height: 88px; width: auto; max-width: 270px; object-fit: contain; display: block; margin-bottom: 6px;
+  filter: drop-shadow(0 0 2px rgba(242, 229, 197, .9)) drop-shadow(0 10px 24px rgba(58, 0, 12, .5));
+}
+.about-logo-img { height: 76px; width: auto; max-width: 240px; object-fit: contain; display: block; margin: 0 auto 8px; }
 .sb-logo {
   width: 42px; height: 42px; border-radius: 13px; background: var(--navy); color: var(--gold);
   display: grid; place-items: center; flex: none;
